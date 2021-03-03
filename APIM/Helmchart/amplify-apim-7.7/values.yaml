@@ -4,9 +4,9 @@
 
 
 global:
-   # AZURE, OPENSHIFT, MINIKUBE
+   # AZURE, OPENSHIFT, MINIKUBE, AWS
    platform: ""
-   # Define is managed service must be used for specific cloud provider. Doesn't work for Openshift and minikube.
+   # Define is managed service must be used for specific cloud provider. Doesn't work for Openshift and minikube. Must be true for AWS ingress.
    managedIngress: false
 
    #Annotation
