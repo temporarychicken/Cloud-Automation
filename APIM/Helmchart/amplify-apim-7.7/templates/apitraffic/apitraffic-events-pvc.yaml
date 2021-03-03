@@ -8,6 +8,8 @@ spec:
     - ReadWriteMany
   {{- if eq .Values.global.platform "AZURE" }}
   storageClassName: azurefile-premium
+  {{- else if eq .Values.global.platform "AWS" }}
+  storageClassName: efs-sc
   {{- end }}
   {{- if .Values.global.customStorageClass.scrwm }}
   storageClassName: {{ .Values.global.customStorageClass.scrwm }}

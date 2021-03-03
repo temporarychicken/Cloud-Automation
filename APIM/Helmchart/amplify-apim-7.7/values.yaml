@@ -8,6 +8,8 @@ global:
    platform: ""
    # Define is managed service must be used for specific cloud provider. Doesn't work for Openshift and minikube. Must be true for AWS ingress.
    managedIngress: false
+   # Only for AWS. Set to false if a Storage Class exist for SCI driver.
+   createSC: true
 
    #Annotation
 
