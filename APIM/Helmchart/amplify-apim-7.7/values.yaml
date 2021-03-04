@@ -8,6 +8,8 @@ global:
    platform: ""
    # Define is managed service must be used for specific cloud provider. Doesn't work for Openshift and minikube. Must be true for AWS ingress.
    managedIngress: false
+   # Value available only for AWS
+   awsVolumeHandle: fs-d7a1e7e2
 
    #Annotation
 
@@ -84,7 +86,7 @@ apitraffic:
       secret: "azure-file"
       name: "gw-events"
       path: "/opt/Axway/apigateway/events"
-      quota: 1
+      quota: 5
 
 apiportal:
    enable: false
