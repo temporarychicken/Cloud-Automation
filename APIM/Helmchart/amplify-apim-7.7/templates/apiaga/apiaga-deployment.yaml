@@ -77,11 +77,9 @@ spec:
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
         volumeMounts:
-        {{- if eq .Values.global.enableDynamicLicense true }}
         - name: config-license
           mountPath: "/opt/Axway/analytics/conf/licenses/lic.lic"
           subPath: license
-        {{- end }}
         lifecycle:
           preStop:
             exec:
@@ -103,9 +101,7 @@ spec:
       terminationGracePeriodSeconds: 101
       terminationGracePeriodSeconds: 100
       volumes:
-      {{- if eq .Values.global.enableDynamicLicense true }}
       - name: config-license
         configMap:
           name: license
-      {{- end }}
 {{- end }}
