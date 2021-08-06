@@ -121,11 +121,9 @@ spec:
         - name: config-jvmxml
           mountPath: "/opt/Axway/apigateway/conf/jvm.xml"
           subPath: jvm.xml
-        {{- if eq .Values.global.enableDynamicLicense true }}
         - name: config-license
           mountPath: "/opt/Axway/apigateway/conf/licenses/lic.lic"
           subPath: license
-        {{- end }}
         lifecycle:
           preStop:
             exec:
@@ -164,8 +162,6 @@ spec:
             - key: jvm
               mode: 256
               path: jvm.xml
-      {{- if eq .Values.global.enableDynamicLicense true }}
       - name: config-license
         configMap:
           name: license
-      {{- end }}
